@@ -8,7 +8,7 @@ export class Report1714245516705 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'uuid',
+            type: 'integer',
             isPrimary: true,
           },
           {

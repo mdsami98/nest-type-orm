@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: nest-docker-postgres
     environment:
-      - PORT=${PORT}
+      - PORT=3000
     ports:
       - '3000:3000'
     command: sh -c "npm install &&  npm run start:dev"
@@ -33,7 +33,7 @@ services:
     links:
       - nest-db:db
     ports:
-      - 9000:8080
+      - 7000:8080
 
 networks:
   default:
