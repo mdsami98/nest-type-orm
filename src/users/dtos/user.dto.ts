@@ -1,20 +1,9 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { Expose } from 'class-transformer';
 
-export class CreateUserDto {
-  @IsEmail()
+export class UserDto {
+  @Expose()
+  id: number;
+
+  @Expose()
   email: string;
-
-  @IsString()
-  @IsNotEmpty()
-  password: string;
-}
-
-export class UpdateUserDto {
-  @IsEmail()
-  @IsOptional()
-  email: string;
-
-  @IsString()
-  @IsOptional()
-  password: string;
 }

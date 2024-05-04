@@ -6,16 +6,17 @@ import {
   Param,
   Patch,
   Query,
-  UseInterceptors,
-  ClassSerializerInterceptor,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { UpdateUserDto } from './dtos/user.dto';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { UpdateUserDto } from './dtos/craete-update-user.dto';
+import { UserDto } from './dtos/user.dto';
 
 @Controller('users')
+@Serialize(UserDto)
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
-  @UseInterceptors(ClassSerializerInterceptor)
+
   @Get('/:id')
   findUserById(@Param('id') id: string) {
     return this.userService.findOneById(parseInt(id));
