@@ -21,6 +21,20 @@ export class User1714243441792 implements MigrationInterface {
             name: 'password',
             type: 'varchar',
           },
+          {
+            name: 'hashRf',
+            type: 'text',
+          },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
       true,
